@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 For Vedika 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: radial-gradient(circle at top, #ffe6ea, #ffd6e0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.95);
+        width: 90%;
+        max-width: 420px;
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        z-index: 2;
+        animation: fadeIn 1.5s ease;
+        backdrop-filter: blur(4px);
+    }
+
+    .emoji {
+        font-size: 50px;
+    }
+
+    h1 {
+        color: #c9184a;
+    }
+
+    p {
+        color: #590d22;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .from {
+        margin-top: 20px;
+        font-style: italic;
+        color: #800f2f;
+        font-weight: bold;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 40px;
+        background: linear-gradient(135deg, #ff4d6d, #c9184a);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(201,24,74,0.4);
+        transition: transform 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        color: #ff4d6d;
+        animation: floatUp linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh) scale(1); opacity: 0; }
+        20% { opacity: 1; }
+        100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    /* Falling hearts */
+    .fall {
+        position: absolute;
+        top: -10vh;
+        color: #ff758f;
+        animation: fallDown linear infinite;
+        opacity: 0.6;
+    }
+
+    @keyframes fallDown {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Sparkles */
+    .sparkle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: sparkle 3s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+        0%,100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    #secret {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Soft Romantic Music -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💖 MAIN PAGE -->
+<div class="card" id="main">
+    <div class="emoji">🌹❤️</div>
+    <h1>I'm Really Sorry, Vedika</h1>
+
+    <p>
+        Vedika,<br><br>
+        I know I hurt you, and that’s something I can’t undo.
+        What hurts me the most is knowing that my actions
+        caused pain to the person I care about the most.<br><br>
+
+        You didn’t deserve confusion, silence, or sadness.
+        You deserved understanding, patience, and reassurance —
+        and I failed to give you that.<br><br>
+
+        I’m not perfect, but my feelings for you are real.
+        I’m learning, I’m growing, and I truly want to be better —
+        not just for us, but for you.<br><br>
+
+        I sit with the weight of my mistake,
+        thinking about how my words or actions
+        may have made you feel small or unheard.
+        Hurting you was never something I could live with easily.<br><br>
+
+        You matter to me more than I show.
+        Losing your smile because of me
+        is something I truly regret.<br><br>
+
+        I’m deeply sorry 💔
+    </p>
+
+    <button onclick="openSecret()">💌 Open My Heart</button>
+    <div class="from">— Yours, Parth</div>
+</div>
+
+<!-- 🔐 SECRET PAGE -->
+<div class="card" id="secret">
+    <div class="emoji">❤️✨</div>
+    <h1>Only For You, Vedika</h1>
+
+    <p>
+        Vedika,<br><br>
+        You are never an option or a habit to me —
+        you are my choice, every single day.<br><br>
+
+        Loving you is not something I question.
+        Losing you is something I fear.
+        Hurting you is something I regret deeply.<br><br>
+
+        No matter how heavy the silence feels,
+        my heart always finds its way back to you.
+        And it always will 💖
+    </p>
+
+    <div class="from">— Always yours, Parth 🌹</div>
+</div>
+
+<script>
+    function openSecret() {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("secret").style.display = "block";
+    }
+
+    // Floating hearts
+    setInterval(() => {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "❤️";
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.fontSize = Math.random() * 20 + 15 + "px";
+        h.style.animationDuration = Math.random() * 3 + 4 + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 6000);
+    }, 400);
+
+    // Falling hearts
+    setInterval(() => {
+        const f = document.createElement("div");
+        f.className = "fall";
+        f.innerHTML = "💖";
+        f.style.left = Math.random() * 100 + "vw";
+        f.style.fontSize = Math.random() * 18 + 12 + "px";
+        f.style.animationDuration = Math.random() * 5 + 6 + "s";
+        document.body.appendChild(f);
+        setTimeout(() => f.remove(), 8000);
+    }, 500);
+
+    // Sparkles
+    setInterval(() => {
+        const s = document.createElement("div");
+        s.className = "sparkle";
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.top = Math.random() * 100 + "vh";
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 3000);
+    }, 300);
+</script>
+
+</body>
+</html>
