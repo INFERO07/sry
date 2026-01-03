@@ -6,7 +6,6 @@
 <title>For Vedika ❤️</title>
 
 <style>
-/* ===== Base ===== */
 body {
   margin: 0;
   height: 100vh;
@@ -18,7 +17,6 @@ body {
   overflow: hidden;
 }
 
-/* ===== Card ===== */
 .card {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
@@ -33,7 +31,6 @@ body {
   overflow-y: auto;
 }
 
-/* ===== Text ===== */
 h1 {
   color: #b5173b;
   margin-bottom: 12px;
@@ -57,7 +54,6 @@ p {
   color: #7a0f2b;
 }
 
-/* ===== Button ===== */
 button {
   margin-top: 18px;
   padding: 12px 26px;
@@ -75,7 +71,6 @@ button:hover {
   background: #c9184a;
 }
 
-/* ===== Falling Hearts ===== */
 .heart {
   position: absolute;
   top: -10vh;
@@ -91,13 +86,11 @@ button:hover {
   }
 }
 
-/* ===== Animations ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Sections ===== */
 #intro, #message {
   display: none;
 }
@@ -106,8 +99,8 @@ button:hover {
 
 <body>
 
-<!-- 🎵 Soft Romantic Music -->
-<audio autoplay loop>
+<!-- 🎵 Soft Romantic Music (FIXED) -->
+<audio id="bgMusic" loop>
   <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
 </audio>
 
@@ -154,26 +147,26 @@ button:hover {
 </div>
 
 <script>
-/* ===== PASSWORD ===== */
-const PASSWORD = "vedika123"; // change if you want
+const PASSWORD = "vedika123";
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value;
   if (input === PASSWORD) {
     document.getElementById("passwordBox").style.display = "none";
     document.getElementById("intro").style.display = "block";
+
+    // ▶️ START MUSIC AFTER USER INTERACTION (FIX)
+    document.getElementById("bgMusic").play();
   } else {
     alert("Incorrect password");
   }
 }
 
-/* ===== FLOW ===== */
 function showMessage() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("message").style.display = "block";
 }
 
-/* ===== FALLING HEARTS ===== */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
